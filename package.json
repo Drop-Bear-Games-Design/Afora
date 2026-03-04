@@ -2,7 +2,7 @@
   "name": "afora",
   "displayName": "Afora",
   "description": "Enhance code readability with rainbow braces, keyword highlighting, escape sequence coloring, and more. Inspired by Viasfora.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "DropBearGames",
   "license": "MIT",
   "icon": "images/icon.png",

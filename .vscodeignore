@@ -6,6 +6,7 @@ scripts/**
 .claude/**
 .git/**
 .gitignore
+.env
 tsconfig.json
 esbuild.js
 vitest.config.ts
