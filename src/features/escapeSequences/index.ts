@@ -1,0 +1,1 @@
+export { EscapeDecorator } from './escapeDecorator';

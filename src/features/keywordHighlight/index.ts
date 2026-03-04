@@ -1,0 +1,1 @@
+export { KeywordDecorator } from './keywordDecorator';

@@ -1,0 +1,265 @@
+{
+  "name": "afora",
+  "displayName": "Afora",
+  "description": "Enhance code readability with rainbow braces, keyword highlighting, escape sequence coloring, and more. Inspired by Viasfora.",
+  "version": "0.1.2",
+  "publisher": "afora",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "afora.toggleRainbowBraces",
+        "title": "Afora: Toggle Rainbow Braces"
+      },
+      {
+        "command": "afora.toggleKeywordHighlighting",
+        "title": "Afora: Toggle Keyword Highlighting"
+      },
+      {
+        "command": "afora.toggleEscapeSequences",
+        "title": "Afora: Toggle Escape Sequences"
+      },
+      {
+        "command": "afora.togglePresentationMode",
+        "title": "Afora: Toggle Presentation Mode"
+      },
+      {
+        "command": "afora.toggleTextObfuscation",
+        "title": "Afora: Toggle Text Obfuscation"
+      }
+    ],
+    "configuration": {
+      "title": "Afora",
+      "properties": {
+        "afora.rainbowBraces.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable rainbow brace colorization"
+        },
+        "afora.rainbowBraces.mode": {
+          "type": "string",
+          "enum": [
+            "unified",
+            "perBrace"
+          ],
+          "default": "unified",
+          "description": "Unified: all brace types share depth. PerBrace: each type has independent depth."
+        },
+        "afora.rainbowBraces.maxDepth": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 16,
+          "default": 9,
+          "description": "Maximum nesting depth for rainbow colors (cycles after this)"
+        },
+        "afora.keywords.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable keyword highlighting"
+        },
+        "afora.keywords.flowControl.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight flow control keywords"
+        },
+        "afora.keywords.query.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight query/LINQ keywords"
+        },
+        "afora.keywords.visibility.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight visibility/modifier keywords"
+        },
+        "afora.keywords.flowControl.additionalKeywords": {
+          "type": "object",
+          "default": {},
+          "description": "Additional flow control keywords per language. Example: { \"python\": [\"pass\"] }"
+        },
+        "afora.keywords.query.additionalKeywords": {
+          "type": "object",
+          "default": {},
+          "description": "Additional query keywords per language."
+        },
+        "afora.keywords.visibility.additionalKeywords": {
+          "type": "object",
+          "default": {},
+          "description": "Additional visibility keywords per language."
+        },
+        "afora.escapeSequences.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable escape sequence highlighting in strings"
+        },
+        "afora.escapeSequences.highlightInvalid": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight invalid escape sequences with error color"
+        },
+        "afora.escapeSequences.formatSpecifiers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Highlight printf format specifiers (C/C++)"
+        },
+        "afora.presentationMode.zoomLevel": {
+          "type": "number",
+          "default": 2,
+          "description": "Zoom level for presentation mode"
+        },
+        "afora.presentationMode.fontSize": {
+          "type": "number",
+          "default": 22,
+          "description": "Font size for presentation mode"
+        },
+        "afora.textObfuscation.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable text obfuscation"
+        },
+        "afora.textObfuscation.patterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Regex patterns to obfuscate"
+        },
+        "afora.currentLineHighlight.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable current line/column highlight"
+        },
+        "afora.performance.debounceMs": {
+          "type": "number",
+          "minimum": 50,
+          "maximum": 2000,
+          "default": 500,
+          "description": "Debounce delay in ms for decoration updates on typing"
+        },
+        "afora.performance.scrollDebounceMs": {
+          "type": "number",
+          "minimum": 50,
+          "maximum": 1000,
+          "default": 100,
+          "description": "Debounce delay in ms for decoration updates on scroll"
+        },
+        "afora.performance.maxFileSize": {
+          "type": "number",
+          "default": 1000000,
+          "description": "Maximum file size in bytes to process (0 = no limit)"
+        }
+      }
+    },
+    "colors": [
+      {
+        "id": "afora.rainbow1",
+        "description": "Rainbow brace depth 1",
+        "defaults": { "dark": "#FFA500", "light": "#E67E00", "highContrast": "#FFA500" }
+      },
+      {
+        "id": "afora.rainbow2",
+        "description": "Rainbow brace depth 2",
+        "defaults": { "dark": "#FF1493", "light": "#CC1077", "highContrast": "#FF1493" }
+      },
+      {
+        "id": "afora.rainbow3",
+        "description": "Rainbow brace depth 3",
+        "defaults": { "dark": "#9ACD32", "light": "#7BA428", "highContrast": "#9ACD32" }
+      },
+      {
+        "id": "afora.rainbow4",
+        "description": "Rainbow brace depth 4",
+        "defaults": { "dark": "#9400D3", "light": "#7600A9", "highContrast": "#9400D3" }
+      },
+      {
+        "id": "afora.rainbow5",
+        "description": "Rainbow brace depth 5",
+        "defaults": { "dark": "#696969", "light": "#505050", "highContrast": "#A0A0A0" }
+      },
+      {
+        "id": "afora.rainbow6",
+        "description": "Rainbow brace depth 6",
+        "defaults": { "dark": "#4169E1", "light": "#3454B4", "highContrast": "#4169E1" }
+      },
+      {
+        "id": "afora.rainbow7",
+        "description": "Rainbow brace depth 7",
+        "defaults": { "dark": "#DC143C", "light": "#B01030", "highContrast": "#DC143C" }
+      },
+      {
+        "id": "afora.rainbow8",
+        "description": "Rainbow brace depth 8",
+        "defaults": { "dark": "#00CED1", "light": "#00A5A7", "highContrast": "#00CED1" }
+      },
+      {
+        "id": "afora.rainbow9",
+        "description": "Rainbow brace depth 9",
+        "defaults": { "dark": "#008000", "light": "#006600", "highContrast": "#00FF00" }
+      },
+      {
+        "id": "afora.braceMismatch",
+        "description": "Mismatched brace color",
+        "defaults": { "dark": "#F08080", "light": "#D06060", "highContrast": "#FF0000" }
+      },
+      {
+        "id": "afora.flowControlKeyword",
+        "description": "Flow control keyword color",
+        "defaults": { "dark": "#FF6347", "light": "#E05535", "highContrast": "#FF6347" }
+      },
+      {
+        "id": "afora.queryKeyword",
+        "description": "Query/LINQ keyword color",
+        "defaults": { "dark": "#00BFFF", "light": "#009ACC", "highContrast": "#00BFFF" }
+      },
+      {
+        "id": "afora.visibilityKeyword",
+        "description": "Visibility/modifier keyword color",
+        "defaults": { "dark": "#808080", "light": "#606060", "highContrast": "#A0A0A0" }
+      },
+      {
+        "id": "afora.escapeSequence",
+        "description": "Valid escape sequence color",
+        "defaults": { "dark": "#D69D85", "light": "#A57762", "highContrast": "#D69D85" }
+      },
+      {
+        "id": "afora.invalidEscapeSequence",
+        "description": "Invalid escape sequence color",
+        "defaults": { "dark": "#FF4444", "light": "#CC3333", "highContrast": "#FF0000" }
+      },
+      {
+        "id": "afora.formatSpecifier",
+        "description": "Printf format specifier color",
+        "defaults": { "dark": "#BDB76B", "light": "#9A964F", "highContrast": "#BDB76B" }
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "npm run compile -- --sourcemap --watch",
+    "build": "npm run compile -- --minify",
+    "package": "npm run build && npx @vscode/vsce package",
+    "lint": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0"
+  }
+}
