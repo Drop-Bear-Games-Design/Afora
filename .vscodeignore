@@ -2,8 +2,15 @@
 src/**
 test/**
 node_modules/**
+scripts/**
+.claude/**
+.git/**
 .gitignore
 tsconfig.json
 esbuild.js
 vitest.config.ts
 **/*.map
+**/*.ts
+*.vsix
+images/*.psd
+images/*.svg

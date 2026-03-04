@@ -1,16 +1,22 @@
 # Afora
 
-A Visual Studio Code extension that enhances code readability through rainbow braces, keyword highlighting, escape sequence coloring, and more. Inspired by [Viasfora](https://github.com/tomasr/viasfora) for Visual Studio.
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/afora.afora)](https://marketplace.visualstudio.com/items?itemName=afora.afora)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/afora.afora)](https://marketplace.visualstudio.com/items?itemName=afora.afora)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+
+Enhance code readability with rainbow braces, keyword highlighting, escape sequence coloring, and more. Inspired by [Viasfora](https://viasfora.com) ([GitHub](https://github.com/tomasr/viasfora)) for Visual Studio.
 
 ## Features
 
 ### Rainbow Braces
+
 Colorizes matching `()`, `{}`, and `[]` by nesting depth using 9 cycling colors. Mismatched braces are highlighted in red.
 
 - **Unified mode** (default): all brace types share the same depth counter
 - **PerBrace mode**: each brace type (`()`, `{}`, `[]`) tracks depth independently
 
 ### Keyword Highlighting
+
 Three categories of keywords, each with a distinct color:
 
 - **Flow Control** (Tomato): `if`, `else`, `for`, `while`, `return`, `throw`, `try`, `catch`, `finally`, etc.
@@ -20,15 +26,19 @@ Three categories of keywords, each with a distinct color:
 Keywords are language-aware and skip strings and comments.
 
 ### Escape Sequence Highlighting
+
 Highlights escape sequences inside strings (`\n`, `\t`, `\\`, `\uNNNN`, etc.) with distinct colors for valid escapes, invalid escapes, and printf format specifiers.
 
 ### Presentation Mode
+
 Toggle command that saves your current editor zoom/font size, applies presentation-friendly values, and restores on toggle off.
 
 ### Text Obfuscation
+
 Define regex patterns in settings to obscure matching text with a solid background overlay.
 
 ### Current Line/Column Highlight
+
 Optional line and column highlight that follows your cursor.
 
 ## Supported Languages
@@ -86,7 +96,7 @@ All colors can be overridden in your `settings.json` under `workbench.colorCusto
 
 ## Recommended Settings
 
-For best results, disable VS Code's built-in bracket colorization:
+For best results, disable VS Code's built-in bracket colorization so it doesn't conflict with Afora's rainbow braces:
 
 ```json
 {
