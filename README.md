@@ -1,7 +1,7 @@
 # Afora
 
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/afora.afora)](https://marketplace.visualstudio.com/items?itemName=afora.afora)
-[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/afora.afora)](https://marketplace.visualstudio.com/items?itemName=afora.afora)
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/dropbeargames.afora)](https://marketplace.visualstudio.com/items?itemName=dropbeargames.afora)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/dropbeargames.afora)](https://marketplace.visualstudio.com/items?itemName=dropbeargames.afora)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 Enhance code readability with rainbow braces, keyword highlighting, escape sequence coloring, and more. Inspired by [Viasfora](https://viasfora.com) ([GitHub](https://github.com/tomasr/viasfora)) for Visual Studio.
